@@ -9,7 +9,7 @@ void blink_nums(char input)
 	{
 		erase_one();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_one();
 	}
 
@@ -17,7 +17,7 @@ void blink_nums(char input)
    {
 		erase_two();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_two();
 	}
 
@@ -25,7 +25,7 @@ void blink_nums(char input)
 	{
 		erase_three();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_three();
 	}
 
@@ -33,7 +33,7 @@ void blink_nums(char input)
 	{
 		erase_four();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_four();
 	}
 
@@ -41,7 +41,7 @@ void blink_nums(char input)
 	{
 		erase_five();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_five();
 	}
 
@@ -49,7 +49,7 @@ void blink_nums(char input)
 	{	
 		erase_six();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_six();
 	}
 	
@@ -57,7 +57,7 @@ void blink_nums(char input)
 	{
 	   erase_seven();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_seven();
 	}
 
@@ -65,7 +65,7 @@ void blink_nums(char input)
 	{
 		erase_eight();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_eight();
 	}
 
@@ -73,7 +73,7 @@ void blink_nums(char input)
 	{
 	   erase_nine();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_nine();
 	}
 
@@ -81,7 +81,7 @@ void blink_nums(char input)
 	{
 	   erase_zero();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_zero();
 	}
 
@@ -89,7 +89,7 @@ void blink_nums(char input)
 	{
 		erase_plus();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_plus();
 	}
 
@@ -97,7 +97,7 @@ void blink_nums(char input)
 	{
 		erase_minus();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_minus();
 	}
 	
@@ -105,7 +105,7 @@ void blink_nums(char input)
 	{
 		erase_mult();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_mult();
 	}
 
@@ -113,9 +113,21 @@ void blink_nums(char input)
 	{
 		erase_divis();
 		refresh();
-		system("sleep 0.1s");
+		system("sleep 0.08s");
 		draw_divis();
 	}
+}
+
+void input_at_table(char input, short *pos)
+{
+   if(input != 'q')
+	{
+		move(MID_YPOS -13, MID_XPOS +*pos);
+		printw("%c", input);
+	}
+
+	if(*pos > -16 ) // -16 is the boundary of the equation table
+   	*pos -= 1;
 }
 
 void check_quit(char input)
