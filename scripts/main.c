@@ -12,8 +12,12 @@ int main()
    curs_set(0);
 	noecho();
 
-	short num = 7; // The only purpose of this var is to be something for the pointer to point to
-	short *pos = &num; // This pointer is used to check the position in which input should be printed
+	short num = 13; // The only purpose of this var is to be something for the pointer to point to
+	short numtwo = 7;
+
+ 	// These pointers are used to check the position in which input should be printed in the equation table
+	short *posy = &num;
+	short *posx = &numtwo;
 
 	draw_everything();
 	while(1 > 0)
@@ -21,7 +25,7 @@ int main()
 	   char input = getch();
 
    	blink_nums(input);
-		input_at_table(input, pos);
+		input_at_table(input, posy, posx);
 
 		check_quit(input);
 	}

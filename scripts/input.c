@@ -118,16 +118,22 @@ void blink_nums(char input)
 	}
 }
 
-void input_at_table(char input, short *pos)
+void input_at_table(char input, short *posy, short *posx)
 {
-   if(input != 'q')
+   if(input != 'q'  &&  input != '\n')
 	{
-		move(MID_YPOS -13, MID_XPOS +*pos);
-		printw("%c", input);
+		move(MID_YPOS -*posy, MID_XPOS +*posx);
+		printw("%c", input);	
+		
+		if(*posx > -16 ) // -16 is the boundary of the equation table
+   	*posx -= 1;
 	}
 
-	if(*pos > -16 ) // -16 is the boundary of the equation table
-   	*pos -= 1;
+	if(input == '\n'  &&  *posy > 11)
+	{
+		*posy -= 1; // Goes down to the next line
+		*posx = 7; // Resets the x position
+	}
 }
 
 void check_quit(char input)
