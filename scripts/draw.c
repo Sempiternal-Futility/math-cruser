@@ -181,7 +181,55 @@ void draw_zero()
 	printw("██████");
 }
 
-void draw_numbers()
+void draw_plus()
+{
+	move(MID_YPOS -8, MID_XPOS +12);
+	printw("  ██  ");
+
+	move(MID_YPOS -7, MID_XPOS +12);
+	printw("██████");
+
+	move(MID_YPOS -6, MID_XPOS +12);
+	printw("  ██  ");
+}
+
+void draw_minus()
+{
+	move(MID_YPOS -4, MID_XPOS +12);
+	printw("      ");
+
+	move(MID_YPOS -3, MID_XPOS +12);
+	printw("██████");
+
+	move(MID_YPOS -2, MID_XPOS +12);
+	printw("      ");
+}
+
+void draw_mult()
+{
+	move(MID_YPOS, MID_XPOS +12);
+	printw("██  ██");
+
+	move(MID_YPOS +1, MID_XPOS +12);
+	printw("  ██  ");
+
+	move(MID_YPOS +2, MID_XPOS +12);
+	printw("██  ██");
+}
+
+void draw_divis()
+{
+	move(MID_YPOS +5, MID_XPOS +12);
+	printw("    ██");
+
+	move(MID_YPOS +6, MID_XPOS +12);
+	printw("  ██  ");
+
+	move(MID_YPOS +7, MID_XPOS +12);
+	printw("██    ");
+}
+
+void draw_everything()
 {
 	draw_one();
 	draw_two();
@@ -193,4 +241,9 @@ void draw_numbers()
 	draw_eight();
 	draw_nine();
 	draw_zero();
+	
+	draw_plus();
+	draw_minus();
+	draw_mult();
+	draw_divis();
 }

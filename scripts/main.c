@@ -2,7 +2,7 @@
 #include </home/felix/Documents/C-Projects/math-crusher/headers/draw.h> // This header already includes ncurses.h
 #include <locale.h>
 
-//TODO: DRAW THE NUMBERS AT DIFFERENT POSITIONS DEPENDING ON THE VALUES OF "LINES" AND "COLS" a.k.a PTS SIZE
+//TODO: DRAW THE OPERATION BOX
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
    noecho();
    curs_set(0);
 
-	draw_numbers();
+	draw_everything();
 	getch();
 
    endwin();

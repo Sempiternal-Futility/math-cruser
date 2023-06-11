@@ -18,6 +18,11 @@ void draw_eight(); // Draws the number 8
 void draw_nine(); // Draws the number 9 
 void draw_zero(); // Draws the number 0
 
-void draw_numbers(); // Draws all the numbers all at once
+void draw_plus(); // Draws the + symbol
+void draw_minus(); // Draws the - symbol
+void draw_mult(); // Draws the * symbol
+void draw_divis(); // Draws the / symbol
+
+void draw_everything(); // Draws everything all at once
 
 #endif
