@@ -16,6 +16,7 @@ int main()
 	draw_three();
 	draw_four();
 	draw_five();
+	draw_six();
 	getch();
 
    endwin();

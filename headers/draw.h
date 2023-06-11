@@ -12,5 +12,6 @@ void draw_two(); // Draws the number 2
 void draw_three(); // Draws the number 3
 void draw_four(); // Draws the number 4
 void draw_five(); // Draws the number 5
+void draw_six(); // Draws the number 6	
 
 #endif
