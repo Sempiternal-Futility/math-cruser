@@ -229,6 +229,31 @@ void draw_divis()
 	printw("██    ");
 }
 
+void draw_table()
+{
+	move(MID_YPOS -14, MID_XPOS -18);
+	printw("████████████████████████████"); // Draws the top horizontal
+
+	//Draws the left vertical
+	move(MID_YPOS -13, MID_XPOS -18);
+	printw("██");	
+	move(MID_YPOS -12, MID_XPOS -18);
+	printw("██");
+	move(MID_YPOS -11, MID_XPOS -18);
+	printw("██");
+
+	//Draws the right vertical
+	move(MID_YPOS -13, MID_XPOS +8);
+	printw("██");
+	move(MID_YPOS -12, MID_XPOS +8);
+	printw("██");
+	move(MID_YPOS -11, MID_XPOS +8);
+	printw("██");
+	
+	move(MID_YPOS -10, MID_XPOS -18);
+	printw("████████████████████████████"); // Draws the bottom horizontal
+}
+
 void draw_everything()
 {
 	draw_one();
@@ -246,4 +271,6 @@ void draw_everything()
 	draw_minus();
 	draw_mult();
 	draw_divis();
+
+	draw_table();
 }

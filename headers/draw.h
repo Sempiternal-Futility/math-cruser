@@ -23,6 +23,8 @@ void draw_minus(); // Draws the - symbol
 void draw_mult(); // Draws the * symbol
 void draw_divis(); // Draws the / symbol
 
+void draw_table(); // Draws the table where the equation is displayed
+
 void draw_everything(); // Draws everything all at once
 
 #endif
