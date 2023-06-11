@@ -13,5 +13,11 @@ void draw_three(); // Draws the number 3
 void draw_four(); // Draws the number 4
 void draw_five(); // Draws the number 5
 void draw_six(); // Draws the number 6	
+void draw_seven(); // Draws the number 7
+void draw_eight(); // Draws the number 8						 
+void draw_nine(); // Draws the number 9 
+void draw_zero(); // Draws the number 0
+
+void draw_numbers(); // Draws all the numbers all at once
 
 #endif

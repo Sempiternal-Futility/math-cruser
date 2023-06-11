@@ -11,12 +11,7 @@ int main()
    noecho();
    curs_set(0);
 
-   draw_one();
-	draw_two();
-	draw_three();
-	draw_four();
-	draw_five();
-	draw_six();
+	draw_numbers();
 	getch();
 
    endwin();
