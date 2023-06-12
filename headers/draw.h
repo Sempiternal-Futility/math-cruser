@@ -53,8 +53,8 @@ void erase_divis(); // Erases the / symbol
 
 
 void draw_table(); // Draws the table where the equation is displayed
-
-
+void erase_table(); // Erases the equation table
+						  
 void draw_everything(); // Draws everything all at once
 
 #endif

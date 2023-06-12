@@ -462,7 +462,7 @@ void draw_table()
 	move(MID_YPOS -14, MID_XPOS -18);
 	printw("████████████████████████████"); // Draws the top horizontal
 
-	//Draws the left vertical
+	// Draws the left vertical
 	move(MID_YPOS -13, MID_XPOS -18);
 	printw("██");	
 	move(MID_YPOS -12, MID_XPOS -18);
@@ -470,7 +470,7 @@ void draw_table()
 	move(MID_YPOS -11, MID_XPOS -18);
 	printw("██");
 
-	//Draws the right vertical
+	// Draws the right vertical
 	move(MID_YPOS -13, MID_XPOS +8);
 	printw("██");
 	move(MID_YPOS -12, MID_XPOS +8);
@@ -480,6 +480,18 @@ void draw_table()
 	
 	move(MID_YPOS -10, MID_XPOS -18);
 	printw("████████████████████████████"); // Draws the bottom horizontal
+}
+
+void erase_table()
+{
+	move(MID_YPOS -13, MID_XPOS -16);
+	printw("                        ");
+
+	move(MID_YPOS -12, MID_XPOS -16);
+	printw("                        ");
+
+	move(MID_YPOS -11, MID_XPOS -16);
+	printw("                        ");
 }
 
 void draw_everything()

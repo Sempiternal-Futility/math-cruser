@@ -2,6 +2,7 @@
 #include <locale.h>
 #include "../headers/draw.h" // This header already includes ncurses.h
 #include "../headers/input.h"
+#include "../headers/math.h"
 
 //TODO: CONVERT INPUTS INTO AN DOUBLE
 
@@ -12,7 +13,8 @@ int main()
    curs_set(0);
 	noecho();
 
-	short num = 13; // The only purpose of this var is to be something for the pointer to point to
+	// The only purpose of these vars are to be something for the pointers to point to
+	short num = 13;
 	short numtwo = -16;
 
  	// These pointers are used to check the position in which input should be printed in the equation table
@@ -67,6 +69,16 @@ int main()
 	   if(input == '\n')
 			i = 25; // Breaks the loop		
 	}
+
+	double num_one;
+	double num_two;
+
+	num_one = atof(num_one_array);
+	num_two = atof(num_two_array);
+
+	sum(num_one, num_two);
+	getch();
+
 
    endwin();
    return 0;
