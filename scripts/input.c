@@ -125,14 +125,14 @@ void input_at_table(char input, short *posy, short *posx)
 		move(MID_YPOS -*posy, MID_XPOS +*posx);
 		printw("%c", input);	
 		
-		if(*posx > -16 ) // -16 is the boundary of the equation table
-   	*posx -= 1;
+		if(*posx < 7 ) // 7 is the boundary of the equation table
+   		*posx += 1;
 	}
 
 	if(input == '\n'  &&  *posy > 11)
 	{
 		*posy -= 1; // Goes down to the next line
-		*posx = 7; // Resets the x position
+		*posx = -16; // Resets the x position
 	}
 }
 
