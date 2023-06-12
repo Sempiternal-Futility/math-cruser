@@ -5,7 +5,6 @@
 #include "../headers/math.h"
 
 //TODO: 
-//IMPLEMENT ERASE FEATURE
 //DRAW A "." ASCII SYMBOL, FOR FLOATING INPUTS
 
 int main()
@@ -34,41 +33,71 @@ int main()
 		for(short i = 0; i < 24; i++) // In this loop, the 1st array gets assigned
 		{
 	   	char input = getch();
-
-   		blink_nums(input);
-			input_at_table(input, posy, posx);
 			check_quit(input);
 
 			num_one_array[i] = input;
+			input_at_table(input, posy, posx);
+   		blink_nums(input);
+
+			if(input == 'x') // Erases input
+			{
+				if(i > 0)
+					i -= 1;
+
+				num_one_array[i] = ' ';
+		   	erase_input(posy, posx);				
+
+				if(i > 0)
+					i -= 1;
+			}
 
 			if(input == '\n')
 	   		i = 25; // Breaks the loop
 		}
 
-		for(short i = 0; i < 2; i++) // In this loop, the operator gets assigned
+		for(short i = 0; i < 10; i++) // In this loop, the operator gets assigned
 		{
 			char input = getch();
-
-   		blink_nums(input);
-   		input_at_table(input, posy, posx);
    		check_quit(input);
+
+   		input_at_table(input, posy, posx);
+   		blink_nums(input);
 
 			if(input != '\n')
 				operator = input;
-		
-			else
-	   		i = 3;
+
+			if(input == 'x') // Erases input
+			{
+				operator = ' ';
+		   	erase_input(posy, posx);				
+				if(i > 0)
+					i -= 1;
+			}
+
+			if(input == '\n')
+	   		i = 11;
 		}
 
 		for(short i = 0; i < 24; i++) // In this loop, the 2nd array gets assigned
    	{
    		char input = getch();
-
-   		blink_nums(input);
-			input_at_table(input, posy, posx);
 			check_quit(input);
 
 			num_two_array[i] = input;
+   		blink_nums(input);
+			input_at_table(input, posy, posx);
+
+			if(input == 'x') // Erases input
+			{				
+				if(i > 0)
+					i -= 1;
+
+				num_two_array[i] = ' ';
+		   	erase_input(posy, posx);				
+
+				if(i > 0)
+					i -= 1;
+			}
 
 	   	if(input == '\n')
 				i = 25; // Breaks the loop		
@@ -92,9 +121,17 @@ int main()
 		else if(operator == '/')
 			divis(num_one, num_two);
 
+		else // If operator is not valid
+		{
+			erase_table_contents();
+         move(MID_YPOS -12, MID_XPOS -16);
+			printw("OPERATOR IS NOT VALID!!!");
+		}
+
 		getch();
 		erase_table_contents();
 
+		//Resets the position values, so that the program can loop correctly
 		*posy = 13;
 		*posx = -16;
 	}

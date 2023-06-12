@@ -120,7 +120,7 @@ void blink_nums(char input)
 
 void input_at_table(char input, short *posy, short *posx)
 {
-   if(input != 'q'  &&  input != '\n')
+   if(input != 'q'  &&  input != '\n'  &&  input != 'x')
 	{
 		move(MID_YPOS -*posy, MID_XPOS +*posx);
 		printw("%c", input);	
@@ -129,10 +129,20 @@ void input_at_table(char input, short *posy, short *posx)
    		*posx += 1;
 	}
 
-	if(input == '\n'  &&  *posy > 11)
+	if(input == '\n')
 	{
 		*posy -= 1; // Goes down to the next line
 		*posx = -16; // Resets the x position
+	}
+}
+
+void erase_input(short *posy, short *posx)
+{	
+	if(*posx > -16)
+	{
+		move(MID_YPOS -*posy, MID_XPOS +*posx -1);
+		printw(" ");
+	   *posx -= 1;
 	}
 }
 
