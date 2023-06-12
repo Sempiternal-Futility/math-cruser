@@ -7,7 +7,6 @@
 //TODO: 
 //IMPLEMENT ERASE FEATURE
 //DRAW A "." ASCII SYMBOL, FOR FLOATING INPUTS
-//LOOP THE PROGRAM UNTIL "q" IS PRESSED
 
 int main()
 {
@@ -30,69 +29,75 @@ int main()
 
 	draw_everything();
 
-	for(short i = 0; i < 24; i++) // In this loop, the 1st array gets assigned
+	while(1 > 0)
 	{
-	   char input = getch();
+		for(short i = 0; i < 24; i++) // In this loop, the 1st array gets assigned
+		{
+	   	char input = getch();
 
-   	blink_nums(input);
-		input_at_table(input, posy, posx);
-		check_quit(input);
+   		blink_nums(input);
+			input_at_table(input, posy, posx);
+			check_quit(input);
 
-		num_one_array[i] = input;
+			num_one_array[i] = input;
 
-		if(input == '\n')
-	   	i = 25; // Breaks the loop
-	}
+			if(input == '\n')
+	   		i = 25; // Breaks the loop
+		}
 
-	for(short i = 0; i < 2; i++) // In this loop, the operator gets assigned
-	{
-		char input = getch();
+		for(short i = 0; i < 2; i++) // In this loop, the operator gets assigned
+		{
+			char input = getch();
 
-   	blink_nums(input);
-   	input_at_table(input, posy, posx);
-   	check_quit(input);
+   		blink_nums(input);
+   		input_at_table(input, posy, posx);
+   		check_quit(input);
 
-		if(input != '\n')
-			operator = input;
+			if(input != '\n')
+				operator = input;
 		
-		else
-	   	i = 3;
+			else
+	   		i = 3;
+		}
+
+		for(short i = 0; i < 24; i++) // In this loop, the 2nd array gets assigned
+   	{
+   		char input = getch();
+
+   		blink_nums(input);
+			input_at_table(input, posy, posx);
+			check_quit(input);
+
+			num_two_array[i] = input;
+
+	   	if(input == '\n')
+				i = 25; // Breaks the loop		
+		}
+
+		double num_one;
+		double num_two;
+
+		num_one = atof(num_one_array);
+		num_two = atof(num_two_array);
+
+		if(operator == '+')
+			sum(num_one, num_two);
+
+		else if(operator == '-')
+			minus(num_one, num_two);
+
+		else if(operator == '*')
+			mult(num_one, num_two);
+
+		else if(operator == '/')
+			divis(num_one, num_two);
+
+		getch();
+		erase_table_contents();
+
+		*posy = 13;
+		*posx = -16;
 	}
-
-	for(short i = 0; i < 24; i++) // In this loop, the 2nd array gets assigned
-   {
-   	char input = getch();
-
-   	blink_nums(input);
-		input_at_table(input, posy, posx);
-		check_quit(input);
-
-		num_two_array[i] = input;
-
-	   if(input == '\n')
-			i = 25; // Breaks the loop		
-	}
-
-	double num_one;
-	double num_two;
-
-	num_one = atof(num_one_array);
-	num_two = atof(num_two_array);
-
-	if(operator == '+')
-		sum(num_one, num_two);
-
-	else if(operator == '-')
-		minus(num_one, num_two);
-
-	else if(operator == '*')
-		mult(num_one, num_two);
-
-	else if(operator == '/')
-		divis(num_one, num_two);
-
-	getch();
-
 
    endwin();
    return 0;
