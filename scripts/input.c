@@ -116,6 +116,14 @@ void blink_nums(char input)
 		system("sleep 0.08s");
 		draw_divis();
 	}
+
+	else if(input == '.')
+	{
+		erase_dot();
+		refresh();
+		system("sleep 0.08s");
+		draw_dot();
+	}
 }
 
 void input_at_table(char input, short *posy, short *posx)

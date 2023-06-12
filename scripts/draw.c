@@ -457,6 +457,24 @@ void erase_divis()
 	printw("      ");
 }
 
+void draw_dot()
+{
+	move(MID_YPOS +10, MID_XPOS +13);
+	printw("████");
+
+	move(MID_YPOS +11, MID_XPOS +13);
+	printw("████");
+}
+
+void erase_dot()
+{
+	move(MID_YPOS +10, MID_XPOS +13);
+	printw("    ");
+
+	move(MID_YPOS +11, MID_XPOS +13);
+	printw("    ");
+}
+
 void draw_table()
 {
 	move(MID_YPOS -14, MID_XPOS -18);
@@ -511,6 +529,7 @@ void draw_everything()
 	draw_minus();
 	draw_mult();
 	draw_divis();
+	draw_dot();
 
 	draw_table();
 }

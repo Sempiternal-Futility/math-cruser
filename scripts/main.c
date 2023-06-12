@@ -4,9 +4,6 @@
 #include "../headers/input.h"
 #include "../headers/math.h"
 
-//TODO: 
-//DRAW A "." ASCII SYMBOL, FOR FLOATING INPUTS
-
 int main()
 {
    setlocale(LC_CTYPE, "");

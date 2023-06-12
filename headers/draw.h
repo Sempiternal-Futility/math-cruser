@@ -50,7 +50,9 @@ void erase_mult(); // Erases the * symbol
 						  
 void draw_divis(); // Draws the / symbol
 void erase_divis(); // Erases the / symbol
-
+						  
+void draw_dot(); // Draws the . symbol
+void erase_dot(); // Erases the . symbol
 
 void draw_table(); // Draws the table where the equation is displayed
 void erase_table_contents(); // Erases the stuff from the equation table
