@@ -4,3 +4,9 @@
 | TO ERASE PRESS 'x'                  |
 | TO QUIT THE PROGRAM PRESS 'q'       |
  -------------------------------------
+
+ ------------------------------------------------------------------------
+| *INSTALL*																				    |
+| To install type "sudo cp math-crusher /usr/local/bin".  				    |
+| Then to launch it, just type "math-crusher" on your terminal emulator. |
+ ------------------------------------------------------------------------
