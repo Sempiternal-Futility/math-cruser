@@ -482,7 +482,7 @@ void draw_table()
 	printw("████████████████████████████"); // Draws the bottom horizontal
 }
 
-void erase_table()
+void erase_table_contents()
 {
 	move(MID_YPOS -13, MID_XPOS -16);
 	printw("                        ");

@@ -46,6 +46,27 @@ void print_result(double result)
 void sum(double num_one, double num_two)
 {
 	double result = num_one + num_two;
-	erase_table();
+	erase_table_contents();
+	print_result(result);
+}
+
+void minus(double num_one, double num_two)
+{
+	double result = num_one - num_two;
+	erase_table_contents();
+	print_result(result);
+}
+
+void mult(double num_one, double num_two)
+{
+	double result = num_one * num_two;
+	erase_table_contents();
+	print_result(result);
+}
+
+void divis(double num_one, double num_two)
+{
+	double result = num_one / num_two;
+	erase_table_contents();
 	print_result(result);
 }

@@ -4,7 +4,10 @@
 #include "../headers/input.h"
 #include "../headers/math.h"
 
-//TODO: CONVERT INPUTS INTO AN DOUBLE
+//TODO: 
+//IMPLEMENT ERASE FEATURE
+//DRAW A "." ASCII SYMBOL, FOR FLOATING INPUTS
+//LOOP THE PROGRAM UNTIL "q" IS PRESSED
 
 int main()
 {
@@ -76,7 +79,18 @@ int main()
 	num_one = atof(num_one_array);
 	num_two = atof(num_two_array);
 
-	sum(num_one, num_two);
+	if(operator == '+')
+		sum(num_one, num_two);
+
+	else if(operator == '-')
+		minus(num_one, num_two);
+
+	else if(operator == '*')
+		mult(num_one, num_two);
+
+	else if(operator == '/')
+		divis(num_one, num_two);
+
 	getch();
 
 
